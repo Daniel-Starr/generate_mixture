@@ -1,0 +1,22 @@
+| 文件名                              | 来源脚本                       | 说明                  |
+| -------------------------------- | -------------------------- | ------------------- |
+| **`Y_pred_custom.csv`**          | `04b_pls_model_custom.py`  | 测试集的预测浓度            |
+| **`Y_test_custom.csv`**          | `04b_pls_model_custom.py`  | 测试集的真实浓度            |
+| **`evaluation_custom.txt`**      | `04b_pls_model_custom.py`  | 评估指标（RMSE、R²、最优成分数） |
+| **`pls_coefficients.csv`**       | `04b_pls_model_custom.py`  | 每个波数点的三气体加权回归系数     |
+| **`pls_prediction_custom.png`**  | `04b_pls_model_custom.py`  | 三气体预测散点对比图          |
+| **`Y_pred_default.csv`**         | `04a_pls_model_default.py` | 测试集的预测浓度（默认模型）      |
+| **`Y_test_default.csv`**         | `04a_pls_model_default.py` | 测试集的真实浓度（默认模型）      |
+| **`evaluation_default.txt`**     | `04a_pls_model_default.py` | 评估指标（RMSE、R²）       |
+| **`pls_prediction_default.png`** | `04a_pls_model_default.py` | 三气体预测散点对比图（默认）      |
+
+
+✅ 源数据：
+interpolated_spectra.csv
+→ 从 01_preprocess.py 出来，三气体插值光谱
+
+mixed_spectrum.csv / mixed_concentration.csv
+→ 从 02_generate_mixture.py 出来，单一比例的混合样本
+
+X_dataset.csv / Y_labels.csv
+→ 从 03_generate_dataset.py 出来，批量合成可用于训练的多比例数据集
