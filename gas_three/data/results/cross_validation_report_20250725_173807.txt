@@ -1,0 +1,53 @@
+Cross-Validation Detailed Analysis Report
+============================================================
+Analysis Time: 2025-07-25 17:38:07
+Cross-validation Strategy: 5-Fold
+Total Samples: 300
+Features: 3104
+Target Variables: 3
+
+1. Overall Results Summary
+----------------------------------------
+Best Configuration:
+  Components: 4
+  Mean R²: 0.999995
+  Std R²: 0.000001
+  95% Confidence Interval: [0.999993, 0.999996]
+
+2. Detailed Results by Component Number
+----------------------------------------
+Components  Mean R²     Std R²      Min R²      Max R²      
+------------------------------------------------------------
+1           0.551326    0.027763    0.508542    0.589646    
+2           0.999994    0.000001    0.999992    0.999995    
+3           0.999994    0.000001    0.999993    0.999995    
+4           0.999995    0.000001    0.999993    0.999995    
+5           0.999995    0.000001    0.999994    0.999995    
+6           0.999995    0.000001    0.999994    0.999995    
+7           0.999994    0.000001    0.999994    0.999995    
+8           0.999994    0.000001    0.999994    0.999995    
+9           0.999994    0.000001    0.999994    0.999995    
+10          0.999994    0.000001    0.999993    0.999995    
+
+3. Fold-by-Fold Analysis (Best Configuration)
+----------------------------------------
+Configuration: 4 components
+
+Fold  Train Samples Val Samples R²          RMSE        
+--------------------------------------------------------
+1     240           60          0.999995    0.000179    
+2     240           60          0.999995    0.000189    
+3     240           60          0.999994    0.000196    
+4     240           60          0.999993    0.000227    
+5     240           60          0.999995    0.000177    
+
+4. Statistical Analysis
+----------------------------------------
+Coefficient of Variation: 0.00%
+Model Stability: Excellent
+Performance Range: 0.000002
+
+5. Recommendations
+----------------------------------------
+✅ Excellent model performance, ready for deployment
+✅ Model shows good stability across folds

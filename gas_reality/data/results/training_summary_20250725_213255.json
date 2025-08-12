@@ -1,0 +1,17 @@
+{
+  "timestamp": "20250725_213255",
+  "best_components": 3,
+  "n_training_samples": 21,
+  "n_validation_samples": 4,
+  "n_test_samples": 7,
+  "individual_model_performance": {
+    "r2": -1.4200381225062317,
+    "rmse": 23.98547270253166,
+    "mae": 14.56291611590188
+  },
+  "multi_target_model_performance": {
+    "r2": -1.0456964781911022,
+    "rmse": 21.270739431566827,
+    "mae": 12.926506892594135
+  }
+}

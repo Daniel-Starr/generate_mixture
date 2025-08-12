@@ -1,0 +1,40 @@
+Gas Spectrum Analysis System Performance Test Report
+============================================================
+Test Time: 2025-07-25 17:25:31
+
+1. Overall Performance Comparison
+------------------------------
+Default PLS Model:
+  RMSE: 0.00018
+  R²: 1.00000
+  Training Time: 0.041s
+
+Adaptive PLS Model:
+  RMSE: 0.00021
+  R²: 0.99999
+  Training Time: 0.872s
+  Optimal Components: 2
+
+2. Individual Gas Performance
+------------------------------
+NO:
+  Default PLS: RMSE=0.00021, R²=0.99999
+  Adaptive PLS: RMSE=0.00025, R²=0.99999
+
+NO2:
+  Default PLS: RMSE=0.00011, R²=1.00000
+  Adaptive PLS: RMSE=0.00011, R²=1.00000
+
+SO2:
+  Default PLS: RMSE=0.00020, R²=1.00000
+  Adaptive PLS: RMSE=0.00023, R²=1.00000
+
+3. Performance Improvement Analysis
+------------------------------
+RMSE Improvement: -15.0%
+R² Improvement: -0.0%
+Training Time Increase: 21.4x
+
+4. Conclusions and Recommendations
+------------------------------
+⚠️ Similar performance, recommend faster default model

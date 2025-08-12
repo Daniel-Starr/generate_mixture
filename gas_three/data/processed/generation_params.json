@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-07-25 20:33:26",
+  "base_noise_level": 0.08,
+  "spectral_noise_level": 0.05,
+  "systematic_noise_level": 0.03,
+  "nonlinear_strength": 0.15,
+  "samples_per_ratio": 15,
+  "valid_combinations": 703,
+  "total_samples": 10545,
+  "unique_combinations": 703
+}

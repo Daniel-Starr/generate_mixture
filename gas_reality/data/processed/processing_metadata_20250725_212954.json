@@ -1,0 +1,11 @@
+{
+  "timestamp": "20250725_212954",
+  "preprocessing_params": {
+    "baseline_removal": true,
+    "smoothing": true,
+    "normalization": "minmax"
+  },
+  "n_samples": 32,
+  "n_spectral_features": 2048,
+  "n_extracted_features": 14
+}

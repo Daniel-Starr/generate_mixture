@@ -1,0 +1,8 @@
+{
+  "model_name": "standard",
+  "best_n_components": 10,
+  "test_rmse": 0.016864557074194028,
+  "test_r2": 0.9912198976398848,
+  "total_samples": 3690,
+  "valid_combinations": 369
+}

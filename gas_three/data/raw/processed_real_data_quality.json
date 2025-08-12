@@ -1,0 +1,18 @@
+{
+  "n_points": 3104,
+  "wavenumber_range": [
+    587.0,
+    3690.0
+  ],
+  "wavenumber_resolution": 1.0,
+  "intensity_range": [
+    0.0,
+    1.0
+  ],
+  "intensity_std": 0.03216210284799416,
+  "signal_to_noise_ratio": 8.981431864441484,
+  "baseline_stability": 0.0013365674115271395,
+  "spectral_coverage": 1.0,
+  "quality_score": 5,
+  "quality_level": "Good"
+}
