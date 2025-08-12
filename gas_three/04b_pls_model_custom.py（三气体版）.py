@@ -11,8 +11,8 @@ max_components = 10
 enable_plot = True
 
 # 加载数据
-X_df = pd.read_csv("X_dataset.csv")
-Y_df = pd.read_csv("Y_labels.csv")
+X_df = pd.read_csv("data/processed/X_dataset.csv")
+Y_df = pd.read_csv("data/processed/Y_labels.csv")
 
 X = X_df.values
 Y = Y_df.values
@@ -49,12 +49,12 @@ print(f"✅ 三气体自适应模型: RMSE = {rmse:.5f}, R² = {r2:.5f}")
 
 # 保存预测结果
 pd.DataFrame(Y_test, columns=["NO_true", "NO2_true", "SO2_true"]).to_csv(
-    "Y_test_custom.csv", index=False
+    "data/results/Y_test_custom.csv", index=False
 )
 pd.DataFrame(Y_pred, columns=["NO_pred", "NO2_pred", "SO2_pred"]).to_csv(
-    "Y_pred_custom.csv", index=False
+    "data/results/Y_pred_custom.csv", index=False
 )
-with open("evaluation_custom.txt", "w") as f:
+with open("data/results/evaluation_custom.txt", "w") as f:
     f.write(f"Best n: {best_n}\nRMSE: {rmse:.5f}\nR2: {r2:.5f}\n")
 
 # 保存系数
@@ -63,9 +63,9 @@ pd.DataFrame(
     coefficients,
     columns=["NO", "NO2", "SO2"],
     index=wavenumbers
-).to_csv("pls_coefficients.csv")
+).to_csv("data/results/pls_coefficients.csv")
 
-print("✅ 已保存三气体的 PLS 加权系数到 pls_coefficients.csv")
+print("✅ 已保存三气体的 PLS 加权系数到 data/results/pls_coefficients.csv")
 
 # 可视化
 if enable_plot:
@@ -78,5 +78,5 @@ if enable_plot:
         plt.ylabel(f"Predicted {name}")
         plt.title(f"{name} Prediction")
     plt.tight_layout()
-    plt.savefig("pls_prediction_custom.png", dpi=300)
+    plt.savefig("data/figures/pls_prediction_custom.png", dpi=300)
     plt.show()

@@ -17,7 +17,7 @@ def mix_gases_with_your_path():
     print("=" * 50)
 
     # 你的文件路径
-    base_path = r"E:\generate_mixture\hitran_csv"
+    base_path = "../../hitran_csv"
     no_file = os.path.join(base_path, "NO.csv")
     no2_file = os.path.join(base_path, "NO2.csv")
     so2_file = os.path.join(base_path, "SO2.csv")
@@ -323,7 +323,7 @@ Wavenumber Range: {wavenumber.min():.0f}-{wavenumber.max():.0f} cm⁻¹"""
 
     # 添加总标题
     plt.suptitle(f'Gas Mixture Analysis: NO:NO2:SO2 = 2:4:4\n'
-                 f'Generated: {timestamp} | Source: E:\\generate_mixture\\hitran_csv\\',
+                 f'Generated: {timestamp} | Source: ../../hitran_csv/',
                  fontsize=14, fontweight='bold')
 
     plt.tight_layout()

@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import os
 
 # 1. 读取仿真数据
-X = pd.read_csv("X_dataset.csv").values
-Y = pd.read_csv("Y_labels.csv").values
+X = pd.read_csv("data/processed/X_dataset.csv").values
+Y = pd.read_csv("data/processed/Y_labels.csv").values
 
 # 2. 拆分训练/测试集
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
@@ -32,7 +32,7 @@ if Y.shape[1] == 1:
     plt.ylabel("Predicted Concentration")
     plt.title("PLS Prediction (Simulated Data)")
     plt.plot([Y_test.min(), Y_test.max()], [Y_test.min(), Y_test.max()], 'r--')
-    plt.savefig("pls_prediction_simulated.png")
+    plt.savefig("data/figures/pls_prediction_simulated.png")
     plt.close()
 else:
     for i in range(Y.shape[1]):
@@ -43,9 +43,9 @@ else:
         plt.title(f"PLS Prediction - Component {i+1}")
         plt.plot([Y_test[:, i].min(), Y_test[:, i].max()],
                  [Y_test[:, i].min(), Y_test[:, i].max()], 'r--')
-        plt.savefig(f"pls_prediction_simulated_component{i+1}.png")
+        plt.savefig(f"data/figures/pls_prediction_simulated_component{i+1}.png")
         plt.close()
 
 # 6. 保存模型
-joblib.dump(pls, "trained_pls_model.pkl")
-print("模型已保存为 trained_pls_model.pkl")
+joblib.dump(pls, "data/models/trained_pls_model.pkl")
+print("模型已保存为 data/models/trained_pls_model.pkl")

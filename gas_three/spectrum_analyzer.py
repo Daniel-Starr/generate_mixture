@@ -32,8 +32,8 @@ class MixtureConcentrationTester:
             print("📊 加载训练好的模型...")
 
             # 加载训练数据重新训练模型（如果没有保存的模型）
-            X_train = pd.read_csv("X_dataset.csv")
-            Y_train = pd.read_csv("Y_labels.csv")
+            X_train = pd.read_csv("data/processed/X_dataset.csv")
+            Y_train = pd.read_csv("data/processed/Y_labels.csv")
 
             # 获取波数范围
             wavenumber_cols = [col for col in X_train.columns if 'cm-1' in col]
@@ -111,7 +111,7 @@ class MixtureConcentrationTester:
 
         except FileNotFoundError as e:
             print(f"❌ 找不到训练数据文件: {e}")
-            print("请确保 X_dataset.csv 和 Y_labels.csv 存在")
+            print("请确保 data/processed/X_dataset.csv 和 data/processed/Y_labels.csv 存在")
             return False
         except Exception as e:
             print(f"❌ 模型加载失败: {e}")
@@ -409,7 +409,7 @@ class MixtureConcentrationTester:
 
             # 保存图表
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            plot_filename = f'concentration_test_results_{timestamp}.png'
+            plot_filename = f'data/figures/concentration_test_results_{timestamp}.png'
             plt.savefig(plot_filename, dpi=300, bbox_inches='tight')
             print(f"📊 结果图表已保存: {plot_filename}")
 
@@ -482,11 +482,11 @@ class MixtureConcentrationTester:
             results_df = pd.DataFrame(results_data)
 
             # 保存CSV
-            csv_filename = f'concentration_test_results_{timestamp}.csv'
+            csv_filename = f'data/results/concentration_test_results_{timestamp}.csv'
             results_df.to_csv(csv_filename, index=False)
 
             # 保存详细报告
-            report_filename = f'test_report_{timestamp}.txt'
+            report_filename = f'data/results/test_report_{timestamp}.txt'
             with open(report_filename, 'w', encoding='utf-8') as f:
                 f.write("气体浓度检测测试报告\n")
                 f.write("=" * 50 + "\n")
@@ -520,7 +520,7 @@ def test_known_mixture():
     tester = MixtureConcentrationTester()
 
     # 你的测试文件路径
-    test_file = r"E:\generate_mixture\gas_three\test\mixed_spectrum_244_noisy_20250710_152143.csv"
+    test_file = "E:\generate_mixture\gas_three/test\mixed_spectrum_244_clean_20250725_151622.csv"
 
     # 运行测试
     results = tester.test_mixture_concentration(test_file)

@@ -3,9 +3,9 @@ import numpy as np
 from scipy.interpolate import interp1d
 
 # 读取三种气体的 CSV
-no_df  = pd.read_csv(r"E:\generate_mixture\hitran_csv\NO.csv")
-no2_df = pd.read_csv(r"E:\generate_mixture\hitran_csv\NO2.csv")
-so2_df = pd.read_csv(r"E:\generate_mixture\hitran_csv\SO2.csv")
+no_df  = pd.read_csv("../hitran_csv/NO.csv")
+no2_df = pd.read_csv("../hitran_csv/NO2.csv")
+so2_df = pd.read_csv("../hitran_csv/SO2.csv")
 
 # 查看它们的波数范围
 no_min, no_max   = no_df['nu'].min(), no_df['nu'].max()
@@ -40,5 +40,5 @@ interpolated_df = pd.DataFrame({
 })
 
 # 保存
-interpolated_df.to_csv("interpolated_spectra.csv", index=False)
-print("✅ 已生成插值后的三气体光谱: interpolated_spectra.csv")
+interpolated_df.to_csv("data/processed/interpolated_spectra.csv", index=False)
+print("✅ 已生成插值后的三气体光谱: data/processed/interpolated_spectra.csv")
